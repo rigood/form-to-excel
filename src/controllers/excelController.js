@@ -16,7 +16,7 @@ export const exportToExcelFile = async (req, res) => {
   sheet.getCell("O7").value = phone;
   sheet.getCell("T7").value = fax;
 
-  const fileName = companyName + Date.now();
+  const fileName = companyName + "_" + Date.now();
 
   await wb.xlsx.writeFile(process.cwd() + `/src/assets/${fileName}.xlsx`);
 
